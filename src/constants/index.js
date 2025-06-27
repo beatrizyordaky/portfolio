@@ -25,7 +25,7 @@ import {
   web,
 } from "../assets";
 
-export const navLinks = [
+export const navSections = [
   {
     id: "about",
     title: "About",
