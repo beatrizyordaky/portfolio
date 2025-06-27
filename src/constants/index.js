@@ -40,7 +40,7 @@ export const navSections = [
   },
 ];
 
-const services = [
+export const services = [
   {
     title: "Web Developer",
     icon: web,
@@ -59,7 +59,7 @@ const services = [
   },
 ];
 
-const technologies = [
+export const technologies = [
   {
     name: "HTML 5",
     icon: html,
@@ -114,7 +114,7 @@ const technologies = [
   },
 ];
 
-const experiences = [
+export const experiences = [
   {
     title: "React.js Developer",
     company_name: "Starbucks",
@@ -125,7 +125,7 @@ const experiences = [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Participating in code reviews and providing export constructive feedback to other developers.",
     ],
   },
   {
@@ -138,7 +138,7 @@ const experiences = [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Participating in code reviews and providing export constructive feedback to other developers.",
     ],
   },
   {
@@ -151,7 +151,7 @@ const experiences = [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Participating in code reviews and providing export constructive feedback to other developers.",
     ],
   },
   {
@@ -164,12 +164,12 @@ const experiences = [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Participating in code reviews and providing export constructive feedback to other developers.",
     ],
   },
 ];
 
-const testimonials = [
+export const testimonials = [
   {
     testimonial:
       "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
@@ -196,7 +196,7 @@ const testimonials = [
   },
 ];
 
-const projects = [
+export const projects = [
   {
     name: "Car Rent",
     description:
@@ -262,4 +262,4 @@ const projects = [
   },
 ];
 
-export { experiences, projects, services, technologies, testimonials };
+export const devName = "Beatriz Yordaky";

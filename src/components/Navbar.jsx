@@ -1,13 +1,47 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { close, logo, menu } from "../assets";
-import { navSections } from "../constants";
+import { devName, navSections } from "../constants";
 import { styles } from "../styles";
 
 const Navbar = () => {
-  const [isSectionSelected, setIsSectionSelected] = useState("");
-  const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
+  const [selectedSection, setSelectedSection] = useState("");
+  const [isToggleMenuOpen, setIsToggleMenuOpen] = useState(false);
+
+  const handleSectionSelect = useCallback((sectionTitle) => {
+    setSelectedSection(sectionTitle);
+  }, []);
+
+  const handleHomeClick = useCallback(() => {
+    setSelectedSection("");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+  const handleToggleMenu = useCallback(() => {
+    setIsToggleMenuOpen((prev) => !prev);
+  }, []);
+
+  const NavLinks = ({ isMobile = false }) => (
+    <ul className={`flex ${isMobile ? "flex-col gap-4" : "flex-row gap-10"}`}>
+      {navSections.map((section) => (
+        <li
+          key={section.id}
+          className={`text-[${
+            isMobile ? "16px" : "18px"
+          }] font-medium cursor-pointer ${
+            selectedSection === section.title ? "text-white" : "text-secondary"
+          } hover:text-white`}
+          onClick={() => {
+            handleSectionSelect(section.title);
+            if (isMobile) setIsToggleMenuOpen(false);
+          }}
+        >
+          <a href={`#${section.id}`}>{section.title}</a>
+        </li>
+      ))}
+    </ul>
+  );
 
   return (
     <nav
@@ -17,63 +51,32 @@ const Navbar = () => {
         <Link
           to="/"
           className="flex items-center gap-2"
-          onClick={() => {
-            setIsSectionSelected("");
-            window.scrollTo(0, 0);
-          }}
+          onClick={handleHomeClick}
         >
           <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
           <p className="text-white text-[18px] font-bold cursor-pointer">
-            Beatriz Yordaky
+            {devName}
           </p>
         </Link>
 
-        {/* Desktop Menu */}
-        <ul className="hidden sm:flex flex-row gap-10">
-          {navSections.map((section) => (
-            <li
-              key={section.id}
-              className={`text-[18px] font-medium cursor-pointer hover:text-white ${
-                isSectionSelected === section.title
-                  ? "text-white"
-                  : "text-secondary"
-              }`}
-              onClick={() => setIsSectionSelected(section.title)}
-            >
-              <a href={`#${section.id}`}>{section.title}</a>
-            </li>
-          ))}
-        </ul>
+        {/* Desktop Navigation */}
+        <div className="hidden sm:flex">
+          <NavLinks />
+        </div>
 
-        {/* Mobile Menu */}
-        <div className="sm:hidden flex flex-1 justify-end items-center">
-          <img
-            src={isMobileMenuOpened ? close : menu}
-            alt="menu"
-            className="w-7 h-7 object-contain"
-            onClick={() => setIsMobileMenuOpened(!isMobileMenuOpened)}
-          />
+        {/* Mobile Navigation */}
+        <div className="sm:hidden flex items-center">
+          <button onClick={handleToggleMenu} aria-label="Toggle menu">
+            <img
+              src={isToggleMenuOpen ? close : menu}
+              alt="menu"
+              className="w-7 h-7 object-contain"
+            />
+          </button>
 
-          {isMobileMenuOpened && (
+          {isToggleMenuOpen && (
             <div className="p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl">
-              <ul className="flex flex-col gap-4">
-                {navSections.map((section) => (
-                  <li
-                    key={section.id}
-                    className={`text-[16px] font-medium cursor-pointer ${
-                      isSectionSelected === section.title
-                        ? "text-white"
-                        : "text-secondary"
-                    }`}
-                    onClick={() => {
-                      setIsMobileMenuOpened(false);
-                      setIsSectionSelected(section.title);
-                    }}
-                  >
-                    <a href={`#${section.id}`}>{section.title}</a>
-                  </li>
-                ))}
-              </ul>
+              <NavLinks isMobile />
             </div>
           )}
         </div>
