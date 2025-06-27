@@ -22,7 +22,7 @@ const Navbar = () => {
     setIsToggleMenuOpen((prev) => !prev);
   }, []);
 
-  const NavLinks = ({ isMobile = false }) => (
+  const NavSections = ({ isMobile = false }) => (
     <ul className={`flex ${isMobile ? "flex-col gap-4" : "flex-row gap-10"}`}>
       {navSections.map((section) => (
         <li
@@ -61,7 +61,7 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden sm:flex">
-          <NavLinks />
+          <NavSections />
         </div>
 
         {/* Mobile Navigation */}
@@ -76,7 +76,7 @@ const Navbar = () => {
 
           {isToggleMenuOpen && (
             <div className="p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl">
-              <NavLinks isMobile />
+              <NavSections isMobile />
             </div>
           )}
         </div>
