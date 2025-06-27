@@ -1,7 +1,7 @@
 import About from "./About";
 import {
+  AnimationCanvas,
   BallCanvas,
-  ComputersCanvas,
   EarthCanvas,
   StarsCanvas,
 } from "./canvas";
@@ -13,8 +13,8 @@ import Works from "./Works";
 
 export {
   About,
+  AnimationCanvas,
   BallCanvas,
-  ComputersCanvas,
   Contact,
   EarthCanvas,
   Hero,
