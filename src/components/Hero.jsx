@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import { devName } from "../constants";
 import { styles } from "../styles";
 import { AnimationCanvas, Particles } from "./canvas";
