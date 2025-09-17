@@ -23,6 +23,9 @@ import {
   tripguide,
   typescript,
   web,
+  loginpage,
+  randomcoffee,
+  hubble,
 } from "../assets";
 
 export const navSections = [
@@ -81,36 +84,12 @@ export const technologies = [
     icon: reactjs,
   },
   {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
     name: "Node JS",
     icon: nodejs,
   },
   {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
     name: "git",
     icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
   },
 ];
 
@@ -196,69 +175,71 @@ export const testimonials = [
   },
 ];
 
+export const workDescription = "In this section, you’ll find a selection of projects that showcase my journey as a software engineer. Each project reflects my passion for solving complex problems through code, my curiosity for exploring new technologies, and my commitment to building user-focused solutions.";
+
 export const projects = [
   {
-    name: "Car Rent",
+    name: "Login Page",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "A responsive user registration page with real-time password validation. Uses HTML, CSS and JavaScript.",
     tags: [
       {
-        name: "react",
+        name: "html",
         color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: carrent,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Job IT",
-    description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: jobit,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
       },
       {
         name: "css",
+        color: "green-text-gradient",
+      },
+      {
+        name: "javascript",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: loginpage,
+    source_code_link: "https://github.com/beatrizyordaky/login-page",
+  },
+  {
+    name: "Generate Random Coffee",
+    description:
+      "A Google Apps Script project designed to foster informal, randomized coffee meetups within teams or communities.",
+    tags: [
+      {
+        name: "javascript",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "google apps script",
+        color: "green-text-gradient",
+      },
+      {
+        name: "google sheets",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: randomcoffee,
+    source_code_link: "https://github.com/beatrizyordaky/generate-random-coffee",
+  },
+  {
+    name: "Hubble Image Processing",
+    description:
+      "Image processing of a nebula's photos taken by the Hubble Space Telescope. Segmentation and labeling techniques were implemented in the hubble deep field image.",
+    tags: [
+      {
+        name: "python",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "jupyter notebook",
+        color: "green-text-gradient",
+      },
+      {
+        name: "cv2",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: hubble,
+    source_code_link: "https://github.com/beatrizyordaky/hubble-image-processing/",
   },
 ];
 
