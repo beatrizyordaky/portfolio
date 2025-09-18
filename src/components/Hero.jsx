@@ -7,7 +7,7 @@ const Hero = () => {
     <section className="relative w-full h-screen mx-auto">
       <div className="relative w-full h-[600px]">
         {/* Particles Layer */}
-        <div className="absolute inset-0 w-full h-full">
+        <div className="absolute inset-0 w-full h-screen">
           <Particles
             particleColors={["#ffffff", "#ffffff"]}
             particleCount={200}
