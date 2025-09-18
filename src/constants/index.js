@@ -182,3 +182,6 @@ export const projects = [
 ];
 
 export const devName = "Beatriz Yordaky";
+export const email = "byordaky@gmail.com";
+export const linkedinLink = "https://www.linkedin.com/in/beatriz-yordaky/";
+export const githubLink = "https://github.com/beatrizyordaky";

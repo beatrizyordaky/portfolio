@@ -1,5 +1,6 @@
 import React from 'react'
 import { SectionWrapper } from "../hoc";
+import { devName, email, linkedinLink, githubLink } from "../constants";
 
 const Contact = () => {
   return (
@@ -9,8 +10,8 @@ const Contact = () => {
         <div className="flex flex-row justify-between items-center">
           {/* Left Section - Name and Copyright */}
           <div>
-            <h2 className="text-white text-2xl font-bold mb-2">Beatriz Yordaky</h2>
-            <p className="text-white text-sm">E-mail: byordaky@gmail.com</p>
+            <h2 className="text-white text-2xl font-bold mb-2">{devName}</h2>
+            <p className="text-white text-sm">E-mail: {email}</p>
           </div>
 
           {/* Right Section - Social Links */}
@@ -18,7 +19,7 @@ const Contact = () => {
             <h3 className="text-white text-lg font-semibold mb-3">Social</h3>
             <div className="space-y-2">
               <a
-                href="https://www.linkedin.com/in/beatriz-yordaky/"
+                href={linkedinLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-purple-300 hover:text-purple-200 transition-colors duration-300"
@@ -26,7 +27,7 @@ const Contact = () => {
                 LinkedIn
               </a>
               <a
-                href="https://github.com/beatrizyordaky"
+                href={githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-purple-300 hover:text-purple-200 transition-colors duration-300"
