@@ -3,7 +3,6 @@ import {
   AnimationCanvas,
   BallCanvas,
   EarthCanvas,
-  StarsCanvas,
 } from "./canvas";
 import Contact from "./Contact";
 import Hero from "./Hero";
@@ -19,7 +18,6 @@ export {
   EarthCanvas,
   Hero,
   Navbar,
-  StarsCanvas,
   Tech,
   Works,
 };
