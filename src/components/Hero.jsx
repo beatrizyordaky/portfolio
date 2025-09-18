@@ -21,9 +21,9 @@ const Hero = () => {
         </div>
 
         {/* Animation Canvas Layer */}
-        <div className="absolute inset-0 w-full h-full pointer-events-auto z-20">
+        {/* <div className="absolute inset-0 w-full h-full pointer-events-auto z-20">
           <AnimationCanvas />
-        </div>
+        </div> */}
 
         {/* Hero Content */}
         <div
