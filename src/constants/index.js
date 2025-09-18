@@ -1,31 +1,15 @@
 import {
-  backend,
-  carrent,
-  creator,
   css,
-  docker,
-  figma,
   git,
   html,
   javascript,
-  jobit,
-  meta,
-  mobile,
-  mongodb,
   nodejs,
   reactjs,
-  redux,
-  shopify,
-  starbucks,
-  tailwind,
-  tesla,
-  threejs,
-  tripguide,
   typescript,
-  web,
   loginpage,
   randomcoffee,
   hubble,
+  logo,
 } from "../assets";
 
 export const navSections = [
@@ -40,25 +24,6 @@ export const navSections = [
   {
     id: "contact",
     title: "Contact",
-  },
-];
-
-export const services = [
-  {
-    title: "Web Developer",
-    icon: web,
-  },
-  {
-    title: "React Native Developer",
-    icon: mobile,
-  },
-  {
-    title: "Backend Developer",
-    icon: backend,
-  },
-  {
-    title: "Content Creator",
-    icon: creator,
   },
 ];
 
@@ -97,7 +62,7 @@ export const experiences = [
   {
     title: "React.js Developer",
     company_name: "Starbucks",
-    icon: starbucks,
+    icon: logo,
     iconBg: "#383E56",
     date: "March 2020 - April 2021",
     points: [
@@ -110,7 +75,7 @@ export const experiences = [
   {
     title: "React Native Developer",
     company_name: "Tesla",
-    icon: tesla,
+    icon: logo,
     iconBg: "#E6DEDD",
     date: "Jan 2021 - Feb 2022",
     points: [
@@ -123,7 +88,7 @@ export const experiences = [
   {
     title: "Web Developer",
     company_name: "Shopify",
-    icon: shopify,
+    icon: logo,
     iconBg: "#383E56",
     date: "Jan 2022 - Jan 2023",
     points: [
@@ -136,7 +101,7 @@ export const experiences = [
   {
     title: "Full stack Developer",
     company_name: "Meta",
-    icon: meta,
+    icon: logo,
     iconBg: "#E6DEDD",
     date: "Jan 2023 - Present",
     points: [
@@ -145,33 +110,6 @@ export const experiences = [
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing export constructive feedback to other developers.",
     ],
-  },
-];
-
-export const testimonials = [
-  {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
   },
 ];
 

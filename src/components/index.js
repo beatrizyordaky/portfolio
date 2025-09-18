@@ -2,7 +2,6 @@ import About from "./About";
 import {
   AnimationCanvas,
   BallCanvas,
-  EarthCanvas,
 } from "./canvas";
 import Contact from "./Contact";
 import Hero from "./Hero";
@@ -15,7 +14,6 @@ export {
   AnimationCanvas,
   BallCanvas,
   Contact,
-  EarthCanvas,
   Hero,
   Navbar,
   Tech,
