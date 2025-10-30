@@ -4,7 +4,7 @@ import { devName, email, linkedinLink, githubLink } from "../constants";
 
 const Contact = () => {
   return (
-    <div className="relative w-full h-screen flex items-center justify-center">
+    <div className="relative w-full flex items-center justify-center py-16">
       {/* Footer Container */}
       <div className="bg-gray-900 rounded-3xl w-full max-w-6xl mx-4 p-8 shadow-2xl">
         <div className="flex flex-row justify-between items-center">
