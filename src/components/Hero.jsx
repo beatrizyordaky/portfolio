@@ -34,7 +34,7 @@ const Hero = () => {
       if (hasSnappedRef.current) return;
       if (!isAtTop()) return;
       const currentY = e.touches?.[0]?.clientY ?? 0;
-      const deltaY = touchStartY - currentY; // positive when swiping up (scrolling down)
+      const deltaY = touchStartY - currentY;
       if (deltaY > 10) {
         e.preventDefault();
         goToAbout();
