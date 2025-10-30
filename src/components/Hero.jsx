@@ -1,8 +1,59 @@
+import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { devName } from "../constants";
 import { styles } from "../styles";
 import { AnimationCanvas, Particles } from "./canvas";
 
 const Hero = () => {
+  const hasSnappedRef = useRef(false);
+
+  useEffect(() => {
+    const isAtTop = () => window.scrollY < 100;
+    const goToAbout = () => {
+      const el = document.querySelector('#about');
+      if (!el) return;
+      hasSnappedRef.current = true;
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      cleanup();
+    };
+
+    const onWheel = (e) => {
+      if (hasSnappedRef.current) return;
+      if (!isAtTop()) return;
+      if (e.deltaY > 0) {
+        e.preventDefault();
+        goToAbout();
+      }
+    };
+
+    let touchStartY = 0;
+    const onTouchStart = (e) => {
+      touchStartY = e.touches?.[0]?.clientY ?? 0;
+    };
+    const onTouchMove = (e) => {
+      if (hasSnappedRef.current) return;
+      if (!isAtTop()) return;
+      const currentY = e.touches?.[0]?.clientY ?? 0;
+      const deltaY = touchStartY - currentY; // positive when swiping up (scrolling down)
+      if (deltaY > 10) {
+        e.preventDefault();
+        goToAbout();
+      }
+    };
+
+    const cleanup = () => {
+      window.removeEventListener('wheel', onWheel, { passive: false });
+      window.removeEventListener('touchstart', onTouchStart, { passive: true });
+      window.removeEventListener('touchmove', onTouchMove, { passive: false });
+    };
+
+    window.addEventListener('wheel', onWheel, { passive: false });
+    window.addEventListener('touchstart', onTouchStart, { passive: true });
+    window.addEventListener('touchmove', onTouchMove, { passive: false });
+
+    return cleanup;
+  }, []);
+
   return (
     <section className="relative w-full h-screen mx-auto">
       <div className="relative w-full h-[600px]">
@@ -45,6 +96,18 @@ const Hero = () => {
             </p>
           </div>
         </div>
+      </div>
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-10 w-full flex justify-center items-center">
+        <a href="#about" aria-label="Scroll to about section">
+          <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
+            <motion.div
+              animate={{ y: [0, 24, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop" }}
+              className="w-3 h-3 rounded-full bg-secondary mb-1"
+            />
+          </div>
+        </a>
       </div>
     </section>
   );
